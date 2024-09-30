@@ -1,0 +1,16 @@
+FILES
+
+main.tf: 
+Configuration file where you will define your infrastructure resources such as virtual machines, storage and networking components. 
+
+provider.tf: 
+Contains the provider configuration, like specifying which cloud provider (AWS, Azure, GCP, etc.) you're using, or any other third-party services.
+
+variables.tf: 
+Used to define input variables for the configuration. It helps to make the configuration flexible by allowing external values to be passed in.
+
+outputs.tf: 
+Contains the output values that are derived from the configuration. It allows you to extract and return useful information about your resources.
+
+terraform.tfvars or *.auto.tfvars: 
+Used to set values for the variables defined in variables.tf. This file can be used to define environment-specific settings or defaults.
