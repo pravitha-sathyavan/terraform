@@ -110,14 +110,6 @@ S3 Glacier Instant Retrieval: Millisecond retrieval, great for data accessed onc
 - Redundancy: Multi-AZ replication
 - Features: Ideal for long-term data storage that you plan to retain for years or decades and can wait for up to 48 hours for retrieval (e.g., regulatory archives, compliance).
 
-### 7. **S3 Outposts**
-- **Use Case**: Storing S3 data on-premises using AWS Outposts for low-latency local access to data
-- **Cost**: Higher due to the infrastructure required to deploy Outposts
-- **Availability**: Depends on local Outposts hardware
-- **Durability**: 99.999999999% (11 9s)
-- **Redundancy**: Stored in a single Outpost location but can be replicated to AWS Regions
-- **Features**: Suitable for workloads that require local storage and processing, like in regulated industries or for low-latency, on-premises applications.
-
 
 
 
