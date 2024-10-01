@@ -28,3 +28,11 @@ resource "aws_s3_bucket_policy" "my_bucket_policy" {
 
 # If we want to give an EC2 instance access to S3 bucket, then create an EC2 instance role with correct IAM permissions and then EC2 instance will be able to access the S3 bucket.
 
+#Enable versioning in s3 bucket
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-versioned-bucket"
+
+  versioning {
+    enabled = true
+  }
+}
