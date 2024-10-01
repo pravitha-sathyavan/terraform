@@ -118,33 +118,6 @@ S3 Glacier Instant Retrieval: Millisecond retrieval, great for data accessed onc
 - **Redundancy**: Stored in a single Outpost location but can be replicated to AWS Regions
 - **Features**: Suitable for workloads that require local storage and processing, like in regulated industries or for low-latency, on-premises applications.
 
----
-
-### Storage Class Comparison:
-
-| Storage Class          | Use Case                                  | Durability           | Availability       | Cost                 | Performance      |
-|------------------------|-------------------------------------------|----------------------|--------------------|----------------------|------------------|
-| **S3 Standard**         | Frequently accessed data                  | 99.999999999% (11 9s) | 99.99%             | Highest              | Low latency, high throughput |
-| **S3 Intelligent-Tiering** | Unpredictable access patterns         | 99.999999999% (11 9s) | 99.9% / 99.99%     | Automated cost optimization | Similar to S3 Standard |
-| **S3 Standard-IA**      | Infrequently accessed data needing fast retrieval | 99.999999999% (11 9s) | 99.9%              | Lower storage cost, retrieval fees | Low latency, retrieval costs |
-| **S3 One Zone-IA**      | Infrequent access, lower resilience        | 99.999999999% (11 9s) | 99.5%              | Lower than Standard-IA  | Same as Standard-IA |
-| **S3 Glacier**          | Archival storage, infrequent access       | 99.999999999% (11 9s) | 99.99%             | Very low, retrieval fees | Slow retrieval (minutes to hours) |
-| **S3 Glacier Deep Archive** | Very long-term archival, rarely accessed | 99.999999999% (11 9s) | 99.99%             | Lowest                | Slow retrieval (hours to days) |
-| **S3 Outposts**         | On-premise data storage with AWS Outposts | 99.999999999% (11 9s) | Depends on Outposts | Depends on Outposts   | Low-latency, local access |
-
----
-
-### Choosing the Right Storage Class:
-- **S3 Standard**: Use for frequently accessed data.
-- **S3 Intelligent-Tiering**: Use when access patterns are unpredictable.
-- **S3 Standard-IA**: Use for data that is less frequently accessed but still needs quick access when required.
-- **S3 One Zone-IA**: Use when cost matters more than data availability across multiple zones.
-- **S3 Glacier**: Use for archival storage where data is accessed occasionally.
-- **S3 Glacier Deep Archive**: Use for long-term data archiving where access is very rare.
-- **S3 Outposts**: Use for on-premises storage where latency or local data residency is critical.
-
-Each class balances cost, performance, and availability, so choosing the right class depends on how often you access your data, how quickly you need it, and your cost constraints.
-
 
 
 
