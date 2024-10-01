@@ -20,3 +20,6 @@ An IAM principal can access an s3 object if the user IAM permission allows it or
 
 Static Website Hosting
 S3 can host static websites and have them accessible on the Internet.
+
+Versioning
+You can version the files in S3. The settings has to be enabled in bucket level. Any file that is not versioned prior to enabling versioning will have version null.
