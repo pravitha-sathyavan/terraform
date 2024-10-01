@@ -5,7 +5,7 @@ Buckets are defined in a region level
 Objects have a key which is the full path to the object 
 Max object size is 5TB, If uploading more than 5Th, use multi-part upload
    
-Security - json based policies
+Security - json based policies:
       
 1. User based 
 IAM policies - which API calls should be allowed for a specific user from IAM
@@ -18,8 +18,19 @@ Bucket Access Control List (ACL) - can be disabled
 
 An IAM principal can access an s3 object if the user IAM permission allows it or the resource policy allows it and there is no explicit denial.
 
-Static Website Hosting
+Static Website Hosting:
 S3 can host static websites and have them accessible on the Internet.
 
-Versioning
+Versioning:
 You can version the files in S3. The settings has to be enabled in bucket level. Any file that is not versioned prior to enabling versioning will have version null.
+
+Replication: 
+Asynchronous replication of data from source bucket to destination bucket. Buckets can be in different AWS accounts.
+CRR - Cross Region Replication: compliance, lower latency access, replication across accounts
+SRR - Same Region Replication: log aggregation, live replication between production and test accounts
+To enable replication, we need to first enable versioning in source and destination bucket.
+
+After you enable replication, only new objects are replicated. You can replicate existing objects using S3 batch replication. It replicates existing objects and objects that failed replication.
+There is no chaining in replication. If bucket1 has replication into bucket2, which has replication into bucket3. Then objects created in bucket1 are not replicated to bucket3.
+For delete operations: Can replicate delete markers from source to target (optional setting).
+
