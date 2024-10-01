@@ -53,61 +53,62 @@ S3 storage classes
 
 Can move between classes manually or using s3 lifecycle configurations
 
-1. **S3 Standard**
-- **Use Case**: Frequently accessed data
-- **Cost**: Highest among the classes due to availability and performance
-- **Availability**: 99.99%
-- **Durability**: 99.999999999% (11 9s)
-- **Performance**: Low latency and high throughput
-- **Redundancy**: Replicated across multiple Availability Zones (AZs)
-- **Features**: Ideal for dynamic content, websites, data analytics, and cloud applications where data is accessed frequently.
+1. S3 Standard
+- Use Case: Frequently accessed data
+- Cost: Highest among the classes due to availability and performance
+- Availability: 99.99%
+- Durability: 99.999999999% (11 9s)
+- Performance: Low latency and high throughput
+- Redundancy: Replicated across multiple Availability Zones (AZs)
+- Features: Ideal for dynamic content, websites, data analytics, and cloud applications where data is accessed frequently. Big data analytics, mobile and gaming applications
   
-### 2. **S3 Intelligent-Tiering**
-- **Use Case**: Data with unknown or unpredictable access patterns
-- **Cost**: Slightly higher than Standard for frequent access, but reduces costs by automatically moving infrequent access data to cheaper tiers
-- **Availability**: 99.9% (for infrequent access objects), 99.99% (for frequent access objects)
-- **Durability**: 99.999999999% (11 9s)
-- **Performance**: Similar to S3 Standard for frequently accessed data, slightly higher retrieval time for infrequent data
-- **Redundancy**: Multi-AZ replication
-- **Features**: Moves data between two access tiers (frequent and infrequent) automatically based on usage patterns without any performance impact or retrieval fees.
+2. S3 Intelligent-Tiering
+- Use Case: Data with unknown or unpredictable access patterns
+- Cost: Slightly higher than Standard for frequent access, but reduces costs by automatically moving infrequent access data to cheaper tiers
+- Availability: 99.9% (for infrequent access objects), 99.99% (for frequent access objects)
+- Durability: 99.999999999% (11 9s)
+- Performance: Similar to S3 Standard for frequently accessed data, slightly higher retrieval time for infrequent data
+- Redundancy: Multi-AZ replication
+- Features: Moves data between two access tiers (frequent and infrequent) automatically based on usage patterns without any performance impact or retrieval fees.
 
-### 3. **S3 Standard-IA (Infrequent Access)**
-- **Use Case**: Infrequently accessed data that needs rapid access when required
-- **Cost**: Lower storage costs compared to Standard but with retrieval costs
-- **Availability**: 99.9%
-- **Durability**: 99.999999999% (11 9s)
-- **Performance**: Similar to Standard but with retrieval fees
-- **Redundancy**: Multi-AZ replication
-- **Features**: Suitable for long-term storage of data that is accessed less frequently but requires immediate access when needed (e.g., backups, disaster recovery data).
+3. S3 Standard-IA (Infrequent Access)
+- Use Case: Infrequently accessed data that needs rapid access when required
+- Cost: Lower storage costs compared to Standard but with retrieval costs
+- Availability: 99.9%
+- Durability: 99.999999999% (11 9s)
+- Performance: Similar to Standard but with retrieval fees
+- Redundancy: Multi-AZ replication
+- Features: Suitable for long-term storage of data that is accessed less frequently but requires immediate access when needed (e.g., backups, disaster recovery data).
 
-### 4. **S3 One Zone-IA (One Zone-Infrequent Access)**
-- **Use Case**: Data that is infrequently accessed and can tolerate a single Availability Zone failure
-- **Cost**: Lower than Standard-IA because it stores data in only one AZ
-- **Availability**: 99.5%
-- **Durability**: 99.999999999% (11 9s) in a single AZ
-- **Performance**: Similar to Standard-IA
-- **Redundancy**: Single-AZ replication (no multi-AZ)
-- **Features**: Ideal for data that does not need the resilience provided by multiple Availability Zones, such as secondary backups or data easily recreated.
+4. S3 One Zone-IA (One Zone-Infrequent Access)
+- Use Case: Data that is infrequently accessed and can tolerate a single Availability Zone failure
+- Cost: Lower than Standard-IA because it stores data in only one AZ
+- Availability: 99.5%
+- Durability: 99.999999999% (11 9s) in a single AZ
+- Performance: Similar to Standard-IA
+- Redundancy: Single-AZ replication (no multi-AZ)
+- Features: Ideal for data that does not need the resilience provided by multiple Availability Zones, such as secondary backups or data easily recreated.
 
-### 5. **S3 Glacier**
-- **Use Case**: Long-term archival storage where access is infrequent and retrieval time is flexible
-- **Cost**: Very low storage cost, with additional costs for retrieval
-- **Availability**: 99.99%
-- **Durability**: 99.999999999% (11 9s)
-- **Performance**:
-  - Retrieval Options: Standard (3-5 hours), Expedited (1-5 minutes), Bulk (5-12 hours)
-- **Redundancy**: Multi-AZ replication
-- **Features**: Suitable for archival data, backups, and long-term data retention where fast access is not critical (e.g., compliance archives).
+5. S3 Glacier
+- Use Case: Long-term archival storage where access is infrequent and retrieval time is flexible
+- Cost: Very low storage cost, with additional costs for retrieval
+- Availability: 99.99%
+- Min storage duration of 90 days.- Durability: 99.999999999% (11 9s)
+- Retrieval Options: Standard (3-5 hours), Expedited (1-5 minutes), Bulk (5-12 hours)
+- Redundancy: Multi-AZ replication
+- Features: Suitable for archival data, backups, and long-term data retention where fast access is not critical (e.g., compliance archives).
 
-### 6. **S3 Glacier Deep Archive**
-- **Use Case**: Very long-term archival storage with very rare access requirements
-- **Cost**: Lowest storage cost, designed for data that is rarely accessed
-- **Availability**: 99.99%
-- **Durability**: 99.999999999% (11 9s)
-- **Performance**:
-  - Retrieval Options: Standard (12 hours), Bulk (up to 48 hours)
-- **Redundancy**: Multi-AZ replication
-- **Features**: Ideal for long-term data storage that you plan to retain for years or decades and can wait for up to 48 hours for retrieval (e.g., regulatory archives, compliance).
+S3 Glacier Instant Retrieval: Millisecond retrieval, great for data accessed once a quarter. Min storage duration of 90 days.
+
+6.S3 Glacier Deep Archive
+- Use Case: Very long-term archival storage with very rare access requirements
+- Cost: Lowest storage cost, designed for data that is rarely accessed
+- Min storage duration of 180 days.
+- Availability: 99.99%
+- Durability: 99.999999999% (11 9s)
+- Retrieval Options: Standard (12 hours), Bulk (up to 48 hours)
+- Redundancy: Multi-AZ replication
+- Features: Ideal for long-term data storage that you plan to retain for years or decades and can wait for up to 48 hours for retrieval (e.g., regulatory archives, compliance).
 
 ### 7. **S3 Outposts**
 - **Use Case**: Storing S3 data on-premises using AWS Outposts for low-latency local access to data
