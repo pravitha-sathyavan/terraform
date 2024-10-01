@@ -34,3 +34,11 @@ After you enable replication, only new objects are replicated. You can replicate
 There is no chaining in replication. If bucket1 has replication into bucket2, which has replication into bucket3. Then objects created in bucket1 are not replicated to bucket3.
 For delete operations: Can replicate delete markers from source to target (optional setting).
 
+Steps to Enable S3 Replication:
+To enable S3 replication, follow these key steps:
+
+1. Enable Versioning: Both the source and destination buckets must have versioning enabled.
+2. Set Up a Replication Rule: Define the replication rules to specify which objects to replicate and how (including the destination bucket and storage class).
+3. IAM Role for S3 Replication: You need an IAM role that allows Amazon S3 to replicate objects on your behalf.
+
+
