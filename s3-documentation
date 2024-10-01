@@ -17,3 +17,6 @@ Object Access Control List (ACL) - finer grain security (can be disabled)
 Bucket Access Control List (ACL) - can be disabled
 
 An IAM principal can access an s3 object if the user IAM permission allows it or the resource policy allows it and there is no explicit denial.
+
+Static Website Hosting
+S3 can host static websites and have them accessible on the Internet.
