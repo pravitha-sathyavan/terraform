@@ -3,7 +3,7 @@ Used for backup and storage of data
 Allows to store files called objects in directories called buckets
 Buckets are defined in a region level
 Objects have a key which is the full path to the object 
-Max object size is 5TB, If uploading more than 5Th, use multi-part upload
+Max object size is 5 GB, If uploading more than 5 GB, use multi-part upload
    
 Security - json based policies:
       
